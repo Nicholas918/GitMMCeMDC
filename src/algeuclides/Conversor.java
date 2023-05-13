@@ -1,13 +1,10 @@
-
 package algeuclides;
 
 public class Conversor {
 
-    
     private int num1;
     private int num2;
 
-    
     public int getNum1() {
         return num1;
     }
@@ -33,25 +30,24 @@ public class Conversor {
             a = b;
             b = r;
         }
-        int mmc = (num1 * num2) / a;
-        return mmc;
+        return (num1 * num2) / a;
 
     }
-public int calcularMdc(int a, int b) {
-    if (b == 0) {
+
+    public int mdc() {
+        int a = num1;
+        int b = num2;
+
+        while (b != 0) {
+            int r = a % b;
+            a = b;
+            b = r;
+        }
         return a;
-    } else {
-        return calcularMdc(b, a % b);
     }
-}
-public int mdc() {
-    return calcularMdc(num1, num2);
-}
-
-
 
     public String obterResultado() {
-       return "O MMC de " + num1 + " e " + num2 + " é: " + mmc() + "\nO MDC de " + num1 + " e " + num2 +" é: " + mdc();
+        return "O MMC de " + num1 + " e " + num2 + " é: " + mmc() + "\nO MDC de " + num1 + " e " + num2 + " é: " + mdc();
 
     }
 }
